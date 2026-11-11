@@ -1,0 +1,696 @@
+{
+  "date": "2026-11-11",
+  "scope": "Audit final local après nettoyage autorisé, sans refonte graphique",
+  "environment": {
+    "node": "v22.23.4",
+    "npm": "10.9.9",
+    "next": "16.4.6",
+    "react": "19.3.0"
+  },
+  "checks": {
+    "tests": {
+      "passed": 22,
+      "failed": 0,
+      "reactWarningsInTestScenarios": 0
+    },
+    "lint": "passed",
+    "build": "passed",
+    "diffCheck": "passed",
+    "cleanInstall": "npm ci, build et 22 tests réussis dans une copie neuve",
+    "http": {
+      "production3001": "passed",
+      "development3000": "passed",
+      "cleanDevelopment3002": "passed",
+      "fullRecipePages": 50,
+      "invalidRoutes": 3,
+      "allIngredientNamesAndQuantitiesCompared": true
+    }
+  },
+  "html": {
+    "validator": "26.11.9 (0f0f1f9)",
+    "source": "https://validator.github.io/validator/",
+    "documents": 57,
+    "routes": 54,
+    "simulatedStates": [
+      "menu-ingredients",
+      "trois-tags",
+      "aucun-resultat"
+    ],
+    "errors": 0,
+    "warnings": 0,
+    "information": 797,
+    "informationMessage": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+    "onlineService": "HTML 429 lors du lot ; vérification finale réalisée avec la distribution locale officielle"
+  },
+  "css": {
+    "profile": "CSS3 avec SVG",
+    "valid": true,
+    "errors": 0,
+    "warnings": 14,
+    "warningMessages": [
+      "Due to their dynamic nature, CSS variables are currently not statically checked",
+      "“-webkit-tap-highlight-color” is a vendor extension",
+      "“::-webkit-search-cancel-button” is a vendor extended pseudo-element",
+      "“-webkit-appearance” is a vendor extension",
+      "“-webkit-box” is a vendor extension",
+      "“-webkit-box-orient” is a vendor extension",
+      "“-webkit-line-clamp” is a vendor extension"
+    ]
+  },
+  "catalogue": {
+    "recipes": 50,
+    "originalJsonSha256": "f1ae2296b91aa88229afc3f04e3bc74c4d5a74ee43803a9b0e4f3eb24f143b73",
+    "officialJsonSha256": "f1ae2296b91aa88229afc3f04e3bc74c4d5a74ee43803a9b0e4f3eb24f143b73",
+    "officialSource": "https://raw.githubusercontent.com/OpenClassrooms-Student-Center/P4-JS-mission-petits-plats/main/recipes.json",
+    "jpegHashesMatchingManifest": 50,
+    "images": [
+      {
+        "image": "Recette01.jpg",
+        "width": 1082,
+        "height": 1600
+      },
+      {
+        "image": "Recette02.jpg",
+        "width": 1069,
+        "height": 1600
+      },
+      {
+        "image": "Recette03.jpg",
+        "width": 1067,
+        "height": 1600
+      },
+      {
+        "image": "Recette04.jpg",
+        "width": 1600,
+        "height": 1600
+      },
+      {
+        "image": "Recette05.jpg",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "image": "Recette06.jpg",
+        "width": 1067,
+        "height": 1600
+      },
+      {
+        "image": "Recette07.jpg",
+        "width": 1066,
+        "height": 1600
+      },
+      {
+        "image": "Recette08.jpg",
+        "width": 1067,
+        "height": 1600
+      },
+      {
+        "image": "Recette09.jpg",
+        "width": 1600,
+        "height": 1276
+      },
+      {
+        "image": "Recette10.jpg",
+        "width": 1600,
+        "height": 1063
+      },
+      {
+        "image": "Recette11.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "image": "Recette12.jpg",
+        "width": 1068,
+        "height": 1600
+      },
+      {
+        "image": "Recette13.jpg",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "image": "Recette14.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "image": "Recette15.jpg",
+        "width": 1600,
+        "height": 699
+      },
+      {
+        "image": "Recette16.jpg",
+        "width": 1600,
+        "height": 1065
+      },
+      {
+        "image": "Recette17.jpg",
+        "width": 1600,
+        "height": 1063
+      },
+      {
+        "image": "Recette18.jpg",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "image": "Recette19.jpg",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "image": "Recette20.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "image": "Recette21.jpg",
+        "width": 1600,
+        "height": 897
+      },
+      {
+        "image": "Recette22.jpg",
+        "width": 1600,
+        "height": 897
+      },
+      {
+        "image": "Recette23.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "image": "Recette24.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "image": "Recette25.jpg",
+        "width": 1600,
+        "height": 1068
+      },
+      {
+        "image": "Recette26.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "image": "Recette27.jpg",
+        "width": 1600,
+        "height": 1065
+      },
+      {
+        "image": "Recette28.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "image": "Recette29.jpg",
+        "width": 1600,
+        "height": 914
+      },
+      {
+        "image": "Recette30.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "image": "Recette31.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "image": "Recette32.jpg",
+        "width": 1600,
+        "height": 1143
+      },
+      {
+        "image": "Recette33.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "image": "Recette34.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "image": "Recette35.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "image": "Recette36.jpg",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "image": "Recette37.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "image": "Recette38.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "image": "Recette39.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "image": "Recette40.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "image": "Recette41.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "image": "Recette42.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "image": "Recette43.jpg",
+        "width": 1600,
+        "height": 922
+      },
+      {
+        "image": "Recette44.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "image": "Recette45.jpg",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "image": "Recette46.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "image": "Recette47.jpg",
+        "width": 1600,
+        "height": 1065
+      },
+      {
+        "image": "Recette48.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "image": "Recette49.jpg",
+        "width": 1600,
+        "height": 1205
+      },
+      {
+        "image": "Recette50.jpg",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  "searchAudit": {
+    "individualTagsChecked": 157,
+    "compatiblePairsChecked": 2474,
+    "fieldQueriesChecked": 354,
+    "notAnExhaustiveEnumerationOfAllInputs": true
+  },
+  "localResources": [
+    {
+      "path": "/_next/static/media/Anton_Regular-s.p.44-lrkefphrp_.ttf",
+      "status": 200,
+      "type": "font/ttf"
+    },
+    {
+      "path": "/_next/static/media/Manrope-s.p.3rjk17h6oms_8.ttf",
+      "status": 200,
+      "type": "font/ttf"
+    },
+    {
+      "path": "/logo.svg",
+      "status": 200,
+      "type": "image/svg+xml"
+    },
+    {
+      "path": "/_next/static/chunks/3qvsvt67y4gsv.css",
+      "status": 200,
+      "type": "text/css; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/1pcw6gskne7pf.js",
+      "status": 200,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/1wnov70f88xjy.js",
+      "status": 200,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/092r-mewpaf3q.js",
+      "status": 200,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/0c1ad7rcpjghx.js",
+      "status": 200,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+      "status": 200,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/3qfy96eoyh-ek.js",
+      "status": 200,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/2mfob5z2qff9n.js",
+      "status": 200,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/0mfmp2fbib7n9.js",
+      "status": 200,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/favicon.ico?favicon.117ezoe8m31dk.ico",
+      "status": 200,
+      "type": "image/x-icon"
+    },
+    {
+      "path": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+      "status": 200,
+      "type": "application/javascript; charset=UTF-8"
+    }
+  ],
+  "routes": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/recette/limonade-de-coco",
+      "status": 200
+    },
+    {
+      "path": "/recette/poisson-cru-a-la-tahitienne",
+      "status": 200
+    },
+    {
+      "path": "/recette/poulet-coco-reunionnais",
+      "status": 200
+    },
+    {
+      "path": "/recette/salade-de-riz",
+      "status": 200
+    },
+    {
+      "path": "/recette/tarte-au-thon",
+      "status": 200
+    },
+    {
+      "path": "/recette/tarte-aux-pommes",
+      "status": 200
+    },
+    {
+      "path": "/recette/tartelettes-au-chocolat-et-aux-fraises",
+      "status": 200
+    },
+    {
+      "path": "/recette/brownie",
+      "status": 200
+    },
+    {
+      "path": "/recette/salade-mediteranneene-fraiche-au-chevre",
+      "status": 200
+    },
+    {
+      "path": "/recette/tartiflette",
+      "status": 200
+    },
+    {
+      "path": "/recette/salade-tomate-mozzarella-et-pommes",
+      "status": 200
+    },
+    {
+      "path": "/recette/compote-pomme-rhubarbe",
+      "status": 200
+    },
+    {
+      "path": "/recette/salade-machee-de-patates",
+      "status": 200
+    },
+    {
+      "path": "/recette/galette-bretonne-saucisse-et-fromage-a-raclette",
+      "status": 200
+    },
+    {
+      "path": "/recette/crepes-chocolat-banane",
+      "status": 200
+    },
+    {
+      "path": "/recette/gratin-de-pates-a-la-tomate",
+      "status": 200
+    },
+    {
+      "path": "/recette/smoothie-a-la-fraise",
+      "status": 200
+    },
+    {
+      "path": "/recette/smoothie-ananas-et-vanille",
+      "status": 200
+    },
+    {
+      "path": "/recette/shake-banane-kiwi",
+      "status": 200
+    },
+    {
+      "path": "/recette/pates-carbonara",
+      "status": 200
+    },
+    {
+      "path": "/recette/spaghettis-a-la-bolognaise",
+      "status": 200
+    },
+    {
+      "path": "/recette/fondant-au-chocolat",
+      "status": 200
+    },
+    {
+      "path": "/recette/quiche-lorraine",
+      "status": 200
+    },
+    {
+      "path": "/recette/salade-de-pates",
+      "status": 200
+    },
+    {
+      "path": "/recette/cookies",
+      "status": 200
+    },
+    {
+      "path": "/recette/soupe-de-tomates",
+      "status": 200
+    },
+    {
+      "path": "/recette/soupe-a-loseille",
+      "status": 200
+    },
+    {
+      "path": "/recette/soupe-de-poireaux",
+      "status": 200
+    },
+    {
+      "path": "/recette/houmous-express",
+      "status": 200
+    },
+    {
+      "path": "/recette/puree-de-pois-casses",
+      "status": 200
+    },
+    {
+      "path": "/recette/jardiniere-de-legumes",
+      "status": 200
+    },
+    {
+      "path": "/recette/croque-monsieur-a-la-dinde",
+      "status": 200
+    },
+    {
+      "path": "/recette/sandwich-au-saumon-fume",
+      "status": 200
+    },
+    {
+      "path": "/recette/puree-de-patate-douce",
+      "status": 200
+    },
+    {
+      "path": "/recette/puree-de-carottes",
+      "status": 200
+    },
+    {
+      "path": "/recette/lasagne-courgettes-et-chevre",
+      "status": 200
+    },
+    {
+      "path": "/recette/courgettes-farcies-au-boeuf",
+      "status": 200
+    },
+    {
+      "path": "/recette/pain-perdu",
+      "status": 200
+    },
+    {
+      "path": "/recette/crumble-aux-pommes",
+      "status": 200
+    },
+    {
+      "path": "/recette/limonade",
+      "status": 200
+    },
+    {
+      "path": "/recette/mousse-au-chocolat",
+      "status": 200
+    },
+    {
+      "path": "/recette/charlotte-au-poires",
+      "status": 200
+    },
+    {
+      "path": "/recette/tarte-au-citron",
+      "status": 200
+    },
+    {
+      "path": "/recette/creme-dessert-au-chocolat",
+      "status": 200
+    },
+    {
+      "path": "/recette/creme-patissiere",
+      "status": 200
+    },
+    {
+      "path": "/recette/far-breton",
+      "status": 200
+    },
+    {
+      "path": "/recette/mousse-au-citron",
+      "status": 200
+    },
+    {
+      "path": "/recette/pizza",
+      "status": 200
+    },
+    {
+      "path": "/recette/smoothie-tropical",
+      "status": 200
+    },
+    {
+      "path": "/recette/frangipane",
+      "status": 200
+    },
+    {
+      "path": "/recette/ma-recette",
+      "status": 404
+    },
+    {
+      "path": "/recette/recette-inexistante",
+      "status": 404
+    },
+    {
+      "path": "/page-inconnue",
+      "status": 404
+    }
+  ],
+  "security": {
+    "production": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "includingDevelopment": {
+      "info": 0,
+      "low": 0,
+      "moderate": 8,
+      "high": 0,
+      "critical": 0,
+      "total": 8
+    },
+    "developmentAdvisory": "https://github.com/advisories/GHSA-g3hv-75wg-m249",
+    "majorDependencyMigrationApplied": false
+  },
+  "accessibility": {
+    "staticStructureChecked": true,
+    "keyboardInteractionsSimulated": true,
+    "realScreenReaderAudit": false,
+    "materialQuantityContrastOnWhite": 4.29,
+    "normalTextAAMinimum": 4.5,
+    "quantityColorPreserved": "#7A7A7A"
+  },
+  "visual": {
+    "providedBy": "Thomas, contrôles Brave et validation explicite dans la conversation",
+    "latestConfirmedWidths": [
+      390,
+      320
+    ],
+    "previousReportWidths": [
+      1440,
+      1024,
+      768,
+      390,
+      320
+    ],
+    "pixelPerfectAll50RecipesCertified": false,
+    "newBrowserCheckByCodex": "Refus : vérification de sécurité administrateur indisponible",
+    "postCleanupScreenshotByCodex": false
+  },
+  "sourcesSha256": {
+    "app/favicon.ico": "c28fdd2a4f31e2dc64f653962286da5c82a4cdfc518b242d32812c624e9a19a4",
+    "app/globals.css": "3ff686fa9b5c7b37fa24056276501744d36dba63fdb0cdbd8385ed72cdf5bf13",
+    "app/layout.jsx": "0dc71f87e59a66d1c441b31a912f55a239067e2baed690b99e518635330f3cdc",
+    "app/not-found.jsx": "039377ef9cefb2ae1bced03b335c992f33a86beed993727f08698db8f9c2c1c9",
+    "app/page.jsx": "9444992240df0583bd0a5b0416fdcc730d157cea75f9ce73581224acd70e2775",
+    "app/recette/[slug]/page.jsx": "1d6094a0d02a5c36282825921f07566e280b91f31a60aa914b7aeb26b8c84567",
+    "components/FilterDropdown.jsx": "3c770170dadefe831c16bb89fa3b71d11b3152ef9688d2728fa5e6af02694c4c",
+    "components/Footer.jsx": "32634bcfaa1c51c810e4ecc3fe5db35e6edf1f0faab7f421c911c1fe1a3af0c5",
+    "components/Header.jsx": "81ee4805233df2f51861423888f8d6a51a0d756274dbe6844f9c26cc4660ff54",
+    "components/Hero.jsx": "472e6f69f7466fc00b0c9aca43de8d53f893392de0d55b3084a17200fd2d322f",
+    "components/Icons.jsx": "a71a39b61163c50f4302067e6441630718788bd91ff50ce239bbf3361a0f6618",
+    "components/IngredientList.jsx": "762776af01d2a55bf6b1c0cc02a39b2dd87d730e849b5e928fa532a0a47b6ee1",
+    "components/MaterialList.jsx": "9ad8e0b9eb19d2945492f9d5dd4d346a779dba5af1e3b6175828746970756156",
+    "components/RecipeCard.jsx": "0dde98e6ae2c09d1bb64199c6565b6b1fb7c0595063f8eee990153b900a32a1d",
+    "components/RecipeExplorer.jsx": "185998c6d4aa95ff17963d62222b176d86142bfb4de393e756908f3d774b1646",
+    "components/SearchBar.jsx": "b6ec6d71ea247ac93cc3e3b07e52894481e58900b0f71b3e6b238be8575e758a",
+    "components/SelectedTags.jsx": "82254ff303b19eb1da5f30ee6fde0bc732368dfd2e85c5bd85eac0c209ccadcd",
+    "data/recipe-presentation.js": "a21f894fff7840410a4a3be45aa6bd4e1af895228ff8f8233b7d458033d0d7a1",
+    "data/recipes.json": "f1ae2296b91aa88229afc3f04e3bc74c4d5a74ee43803a9b0e4f3eb24f143b73",
+    "eslint.config.mjs": "d1257bff0b0aa0cb73034a730f33405d4de7d440678564d0183c5ca1244bb639",
+    "jsconfig.json": "8e9bec0e46982911c8f80fd901e4dc46f22c67c07113f53631200a572d77e081",
+    "lib/search.mjs": "de1eb10d1df739e4e5192022073bbbb644e7b2f6e63d143db02c071ecc689328",
+    "next.config.mjs": "1a55ed528e451cb18f642ec6b031e4e5f0ec913701bb54908f4206225c5b9fc5",
+    "package-lock.json": "9d62a34a6f9c98e86ca41dc8b1b1c7c9f52c8ee5a34dedd9778fe41fe618bad5",
+    "package.json": "1d7db6bb391ec288f457d322222c7e11f4ba1756bfd887af9daf090b220369f7",
+    "public/fonts/Anton-OFL.txt": "ee67e6ee22790b7929f1a3769ca2801d565c64b5a9096942c1adf5596de9c9e4",
+    "public/fonts/Anton-Regular.ttf": "a4ba3a92350ebb031da0cb47630ac49eb265082ca1bc0450442f4a83ab947cab",
+    "public/fonts/Manrope-OFL.txt": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b",
+    "public/fonts/Manrope.ttf": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6",
+    "public/logo.svg": "abce67d52eace1629a777a4f071d47282309bf07503c5c7a1f08fe7c2bc8b4ad",
+    "tests/http-check.mjs": "90985134123c3780604ac126b880d4135699928018c1fa35795bf85d3d11ec03",
+    "tests/search.test.mjs": "afd57da5031075144f119f1deb9259ced4b63df27c6fc06a1bd754f8e74b677b",
+    "tests/ui.test.mjs": "4e3b3061f7585111d02bb93f29045781ad16a0af9c4569ccebad6f7cd7e5a79a"
+  },
+  "sourcesFingerprint": "dc69e909ab68fc929d5c18e7ad69c1c6f17439bb280d3b4def8fcd2240c28375"
+}

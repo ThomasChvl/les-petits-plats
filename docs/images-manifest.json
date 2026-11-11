@@ -1,0 +1,352 @@
+[
+  {
+    "image": "Recette01.jpg",
+    "originalSha256": "2eb6b62395612311e0f1492f1db8c520d471cd469d6e5760aa445f10dfe0e34d",
+    "optimizedSha256": "7a25d792d2c1a44bfacd55c10ff9dc54dad6605e7bcc4516784413a61e442fee",
+    "originalBytes": 2481352,
+    "optimizedBytes": 100160
+  },
+  {
+    "image": "Recette02.jpg",
+    "originalSha256": "05749e8421d06ac692063b739d83d1ef42f709815d67d206ddb5606bb1767284",
+    "optimizedSha256": "971bb527d61136b7217e60d7ef159ea0351613db1cbeffab0c0c4fcdd07796a2",
+    "originalBytes": 1420220,
+    "optimizedBytes": 180030
+  },
+  {
+    "image": "Recette03.jpg",
+    "originalSha256": "7bbcf30c1b2c6ae5d5c73a29013b8b19bf7ea93af83556ea765a2cc8ce3e9c08",
+    "optimizedSha256": "9db52c2b3237558d63c0dc16112fb4afccb62e41e7949ccb9e223bd0efb3d8e9",
+    "originalBytes": 4094845,
+    "optimizedBytes": 105521
+  },
+  {
+    "image": "Recette04.jpg",
+    "originalSha256": "e083dfc8eb7f45844e4ff815ff226746313fe4898cc9647284b21ab816aa3d32",
+    "optimizedSha256": "fc1dcbd4082702871e4ce723893de07ab6db7f809d4ef2250296ca5d3144451d",
+    "originalBytes": 1913309,
+    "optimizedBytes": 554919
+  },
+  {
+    "image": "Recette05.jpg",
+    "originalSha256": "e6c671f60fce0761c081a3500d57e1f3473513e2b0c9f3ab6e04793f7b509b8f",
+    "optimizedSha256": "b642f8d77819b1b77533ca721ce6502c479b36bdc01bdbb25f0d6fe44a7b9582",
+    "originalBytes": 2750831,
+    "optimizedBytes": 206484
+  },
+  {
+    "image": "Recette06.jpg",
+    "originalSha256": "7189356c01006cdad348b8eb1015f371d80d87f91e9d7068caf4defc6dfac9de",
+    "optimizedSha256": "056183a0e2e76787450dc44e2142dd3d480d158abfdd66a23653228f8e843680",
+    "originalBytes": 1670603,
+    "optimizedBytes": 313817
+  },
+  {
+    "image": "Recette07.jpg",
+    "originalSha256": "05a3af604f585b2f1e257bc90bea8c3b1701598779bdb9a116457c375558f826",
+    "optimizedSha256": "2532ea085e5a605f02d39ebd436df320ca8931bfe77388d456ff42bec3aff93e",
+    "originalBytes": 3228916,
+    "optimizedBytes": 346878
+  },
+  {
+    "image": "Recette08.jpg",
+    "originalSha256": "bc90303d357ba5a5c67f60467e9d9b9dded86a91a314d52533869ee758e4c4a3",
+    "optimizedSha256": "bb294e98239a417814edd425e8410f6a0d58378526ad524b0e34788c6dcee9be",
+    "originalBytes": 2006542,
+    "optimizedBytes": 232960
+  },
+  {
+    "image": "Recette09.jpg",
+    "originalSha256": "2a15e522e2626f8ce3e101f19d5efad48a7ca995f692a5b940b24804a1e1ecfc",
+    "optimizedSha256": "ffdf57a9b53e9b73ef3ee2603243170695c15198e464e456dfdb094940c2340f",
+    "originalBytes": 948666,
+    "optimizedBytes": 279514
+  },
+  {
+    "image": "Recette10.jpg",
+    "originalSha256": "24f8c134f2bf91868a0cbf6b6f129d08e7b0fb234c068a8a2316130d175d1afe",
+    "optimizedSha256": "0ddaff3f084c76c76a8fc06fbd257a584bbba3e28a301af96c2e5f1867a3d3c3",
+    "originalBytes": 1166533,
+    "optimizedBytes": 135554
+  },
+  {
+    "image": "Recette11.jpg",
+    "originalSha256": "5cd35936fd2ebd00a9b1f746a6f553f02608d815eb88ee1cf0dbe9b9dedf3de6",
+    "optimizedSha256": "17aa64e52eddc1d336bccbe42a75af3e484aa69a0f27a4a0441cfb85147b41a1",
+    "originalBytes": 2100309,
+    "optimizedBytes": 151721
+  },
+  {
+    "image": "Recette12.jpg",
+    "originalSha256": "86a7216954bde8dd396269566fc36311bc3a630da33e3ec000197922569312fa",
+    "optimizedSha256": "13024251a837e0895b8baf3eb9cc58b53d2287c348c7911e8c891457c0352ec3",
+    "originalBytes": 8058960,
+    "optimizedBytes": 175564
+  },
+  {
+    "image": "Recette13.jpg",
+    "originalSha256": "0288c89fca256db298ce7f933cb0ba218732bb6da778e83eef532d388b4e6306",
+    "optimizedSha256": "70ace23d0e6280851baf59f47639d5b2032fbd3c52365b8fa6722661ee8e984d",
+    "originalBytes": 2450561,
+    "optimizedBytes": 130033
+  },
+  {
+    "image": "Recette14.jpg",
+    "originalSha256": "05fb1ac8c2d729c0488cf642dc72aadf8f73e9b6faa1a117e07f91639850ef81",
+    "optimizedSha256": "8c0f85e2ec3585ddb7191a0ad85a66b5ab9ae72bc23f60d64838275a417c2afd",
+    "originalBytes": 5507866,
+    "optimizedBytes": 225708
+  },
+  {
+    "image": "Recette15.jpg",
+    "originalSha256": "1ef0e72c2013219a7baba14968603b7cad0aa8cca08b98c685ca4464df539927",
+    "optimizedSha256": "4f7f530002ff040e2017751cb36aef4616dd8321c47f4a863b1fad2f8c7300df",
+    "originalBytes": 3868435,
+    "optimizedBytes": 135344
+  },
+  {
+    "image": "Recette16.jpg",
+    "originalSha256": "294d5618c689931a58b2a70110c689bbc1b44da446257b7702cb2afd9390c880",
+    "optimizedSha256": "37a703e05ff7f820b5cce671be6891a0b1b0d59b8f5380881e66ff5f8bd3c540",
+    "originalBytes": 2875510,
+    "optimizedBytes": 120042
+  },
+  {
+    "image": "Recette17.jpg",
+    "originalSha256": "af067fa4a31a36883da78f22dab5ebca9e4d4258aeba36c65002bf78c756c37d",
+    "optimizedSha256": "45a0cf3896e16c2a6c0c1d136e7c794c653da29d91ae4c7fdefd201927f93b4d",
+    "originalBytes": 4186713,
+    "optimizedBytes": 101712
+  },
+  {
+    "image": "Recette18.jpg",
+    "originalSha256": "7988c571f1fa643a18a4d92ba4dd7026b3910ff92dde814c09b18e09fe6704de",
+    "optimizedSha256": "ccac32e50c70d2155ad84485eeb11fb00afa6753cd493298ebc51561fb28f187",
+    "originalBytes": 2191967,
+    "optimizedBytes": 68624
+  },
+  {
+    "image": "Recette19.jpg",
+    "originalSha256": "68fd9c1d3aa30b85e05259cd6d504bc5008d9928d1525b7240a094acf8e117d2",
+    "optimizedSha256": "091cd3e592c25503b6da99351da5239b783f3c905dc9a6adbfbb69d81f2fbb79",
+    "originalBytes": 4917921,
+    "optimizedBytes": 130722
+  },
+  {
+    "image": "Recette20.jpg",
+    "originalSha256": "20d90401eadf792191122a121eaf0c44a8a417245a46871b6b0c2f179f96c5e0",
+    "optimizedSha256": "0d2343b59988dbaed9e14eb7c031df73f5fe268b914f7bd2f1daaa1127a8f8b3",
+    "originalBytes": 7402342,
+    "optimizedBytes": 170467
+  },
+  {
+    "image": "Recette21.jpg",
+    "originalSha256": "2c76f0ad515b6162addbb25f3de38a91435430d61c2bfce5e2f013b5e20f1820",
+    "optimizedSha256": "860d3e40950f5754ad0dbf311e39d0edae406a1a94d3a9a8ed4f02ebad1a326e",
+    "originalBytes": 7824722,
+    "optimizedBytes": 228277
+  },
+  {
+    "image": "Recette22.jpg",
+    "originalSha256": "9e928c9ef891918a1ac8a081de8bbee99e98a82abecb6bf5474492c1c3d24c00",
+    "optimizedSha256": "5f027bce51c7a882b842c76382eff079f7ce0c73e7d0affe8a534e9bba440f4f",
+    "originalBytes": 4576186,
+    "optimizedBytes": 124234
+  },
+  {
+    "image": "Recette23.jpg",
+    "originalSha256": "e754a7fa5447393b39e4410d6cd4875a62a5ffb7aeb424de5dec5bd0654b35a3",
+    "optimizedSha256": "0560e9ef927b4fb2261c4eba0b7f42b94e6c50a5f66996c633e2742c6f59553f",
+    "originalBytes": 3365902,
+    "optimizedBytes": 235315
+  },
+  {
+    "image": "Recette24.jpg",
+    "originalSha256": "10bf2284d36321810e455a20bbad65232fe6473ff8a9d60bfa8a0517535c20db",
+    "optimizedSha256": "16a18363dec3bb658c949f0cc305770c6c05da12e5d657d09f0578809efd41c5",
+    "originalBytes": 20440962,
+    "optimizedBytes": 421321
+  },
+  {
+    "image": "Recette25.jpg",
+    "originalSha256": "f43fe446013ea068312ea5de32305db62aa0481664d465e82c26ad7996b9f62b",
+    "optimizedSha256": "bc1fd59f34454556ad047cd25d496778cd080026be7e7490b2a33713d6357147",
+    "originalBytes": 12521718,
+    "optimizedBytes": 491799
+  },
+  {
+    "image": "Recette26.jpg",
+    "originalSha256": "b5e4892b8241ca31a02b8f841af21f01fd24e3fddcbc33a46794ee301d4ecfbb",
+    "optimizedSha256": "e904d329b579d558989c9893d510468707cf759b7271d5da089080fd5176db21",
+    "originalBytes": 6854777,
+    "optimizedBytes": 265431
+  },
+  {
+    "image": "Recette27.jpg",
+    "originalSha256": "5f94f29261e3b51f874eb4125fff5f81845fb57f31c1e5e38f47dfcef1c44146",
+    "optimizedSha256": "efa56f313eb8da6098815176c157df985796ea3dbe89520170a61860c8989353",
+    "originalBytes": 8983141,
+    "optimizedBytes": 337652
+  },
+  {
+    "image": "Recette28.jpg",
+    "originalSha256": "9c4ee8c374d530601f6e19f025709e60b676f6b85623586bb0533f0ae794317c",
+    "optimizedSha256": "90b1bfe66ff2a233875c15fd6c300465554c9494ad7429c35fe327ad121607da",
+    "originalBytes": 10923827,
+    "optimizedBytes": 173499
+  },
+  {
+    "image": "Recette29.jpg",
+    "originalSha256": "acfd6c69cb3bff7764678d040aaf2268773eecc85d1e06c99495436ec5c9897a",
+    "optimizedSha256": "b2b534ff8b0df2c0256ec7e90eafbdbe14fde65e39a7b70cb3c74ed3551a220b",
+    "originalBytes": 922639,
+    "optimizedBytes": 214435
+  },
+  {
+    "image": "Recette30.jpg",
+    "originalSha256": "82fb18ddb4a2b00717cc1ee73253003ef7bd08eb0285676ea894f8e716fd2a5f",
+    "optimizedSha256": "dd991ec55c3627247a57177e0aba0d5bf2ceba7910341cd7bcf7c193174be4df",
+    "originalBytes": 7861073,
+    "optimizedBytes": 293811
+  },
+  {
+    "image": "Recette31.jpg",
+    "originalSha256": "6b273330f6b8280a204b3a21714d804e257b9aa5de33d850c926bc692092511f",
+    "optimizedSha256": "1f5fb3993f03e1733432504ab537b0581f26c14c4d40ef3e96577d2f94fa2779",
+    "originalBytes": 4881753,
+    "optimizedBytes": 220106
+  },
+  {
+    "image": "Recette32.jpg",
+    "originalSha256": "4deaf6be8146920ae28265b1deb3e9d09c693311b84104ef68706630086b0436",
+    "optimizedSha256": "cbec5866212a0f92b5550cb01882875bca00e4dc5cf12d66356879281deb4155",
+    "originalBytes": 3780444,
+    "optimizedBytes": 187569
+  },
+  {
+    "image": "Recette33.jpg",
+    "originalSha256": "0450ed827fd732bc7093164260b9a455b4d919ec192a7b533facd0785c44f454",
+    "optimizedSha256": "543e87dcfc1a145d6bfe1de2423cb45252a3083048b85a998e132bb2d0ed96c3",
+    "originalBytes": 6839788,
+    "optimizedBytes": 197061
+  },
+  {
+    "image": "Recette34.jpg",
+    "originalSha256": "e8787e8682f3665e5ed65ebb553f124daced4d6d9b500a8baabe457823710200",
+    "optimizedSha256": "2f4ec3efa4fc82fb170c19e588a6b71dcb8716201f5b24c1980b96a0e9408b6d",
+    "originalBytes": 11696114,
+    "optimizedBytes": 304302
+  },
+  {
+    "image": "Recette35.jpg",
+    "originalSha256": "f1d07b60cfec38cea17edd190d8d5c5da8724954fe8263dce90f8b7436954da6",
+    "optimizedSha256": "23a46d5322cf210b0fc500bd1eccce576b84230db9c73721ffe4589b0dee095f",
+    "originalBytes": 3943052,
+    "optimizedBytes": 167671
+  },
+  {
+    "image": "Recette36.jpg",
+    "originalSha256": "19c1d246e938c5238b5927c3461420862a5d2106d80ee76180e3875f114ae202",
+    "optimizedSha256": "fe81497b25bad86e269a5ee01fe2b5a15c9439e4dd277fd7ba42328c9116a751",
+    "originalBytes": 3113224,
+    "optimizedBytes": 194421
+  },
+  {
+    "image": "Recette37.jpg",
+    "originalSha256": "840e89cc5b6f90b87de18bfa8b900fea8b0515b0110aa3931b89adfda013fc1c",
+    "optimizedSha256": "6c29aa65a2661697df953a7ca5269e179cb77adb69d79c8c173bcfc89162a1b0",
+    "originalBytes": 4494380,
+    "optimizedBytes": 243629
+  },
+  {
+    "image": "Recette38.jpg",
+    "originalSha256": "ff5b87a4e08660ce56d065f4bb6e0e6b56e03fe225b9076c797550bda052b46a",
+    "optimizedSha256": "ffd4201ea0ecd028ce8239ec8c1461c005e9847871e7000f149efb9983a461d6",
+    "originalBytes": 5503259,
+    "optimizedBytes": 241875
+  },
+  {
+    "image": "Recette39.jpg",
+    "originalSha256": "a11add7769c4f7c82a4e6a9c57dc8be6ee2141480dbeeeab13a43c9392b7a5e3",
+    "optimizedSha256": "2874441c6c82a7835148a433f6c19015b60bb041e58b5b9415357f021f91d1cc",
+    "originalBytes": 9239090,
+    "optimizedBytes": 253739
+  },
+  {
+    "image": "Recette40.jpg",
+    "originalSha256": "d0c3441ef52e2f83cfdc59d0329e3836dbc364d780aa69a682e980457643d4d2",
+    "optimizedSha256": "ee87c3d15d0132e8c950645a2ef43391cd252cb50a016ea50160b45e2d4f5d0d",
+    "originalBytes": 7295328,
+    "optimizedBytes": 165905
+  },
+  {
+    "image": "Recette41.jpg",
+    "originalSha256": "f21235057530bcf7356f24c8fbdac4fc0ad973b45f6fa34e122860f4dbe5832a",
+    "optimizedSha256": "5603397b3acc9748954933a248a9f408ce19b2278df9aee10c2f7303af0e4200",
+    "originalBytes": 9470394,
+    "optimizedBytes": 188876
+  },
+  {
+    "image": "Recette42.jpg",
+    "originalSha256": "838562ac76987f2a6ccdfdc60640c994b12a61298f332acba23c049cf1550a27",
+    "optimizedSha256": "e5849a07b564c787ffc3874a8e54fb240a29a0bfdbb60b696ab21f751ec3a695",
+    "originalBytes": 2254889,
+    "optimizedBytes": 158512
+  },
+  {
+    "image": "Recette43.jpg",
+    "originalSha256": "cdcf25cb58ab4c197286e016de31d7cd36cf86900a65fb640d95481021d1e7bc",
+    "optimizedSha256": "d5e6fc4b97e136026bad11a071a2d4830d3f2f567cc3673e991a7988f1e6381d",
+    "originalBytes": 3427551,
+    "optimizedBytes": 133000
+  },
+  {
+    "image": "Recette44.jpg",
+    "originalSha256": "e2bcab62f561ab1c29f0f74e6c97d66d62be26071bc0d314634fbbe71f6d75c2",
+    "optimizedSha256": "c6a5648e4a6f92c41b487d6cd1ef8d3ef40b467e7b3a21df98f31ed00e552dab",
+    "originalBytes": 4334319,
+    "optimizedBytes": 129987
+  },
+  {
+    "image": "Recette45.jpg",
+    "originalSha256": "b46fc793eaf3d64aabb0c3256aa2ea296d315a3c1b2772e48a388014a7880175",
+    "optimizedSha256": "15662c71d0a1b05558b9230277345c1a9ef228a28a0768968c6e2b97804108ee",
+    "originalBytes": 5726792,
+    "optimizedBytes": 182164
+  },
+  {
+    "image": "Recette46.jpg",
+    "originalSha256": "bbe030d6f2dadf3f01dbc0a7c5a4d6f4099c7e0606d5d1776ef39059dfb62703",
+    "optimizedSha256": "c187faea1b066ae6fa42ccac41b8e36f71a0a71b13d8e5f616c2d646f04fbe3a",
+    "originalBytes": 4960107,
+    "optimizedBytes": 166023
+  },
+  {
+    "image": "Recette47.jpg",
+    "originalSha256": "7c20338dc77253b2e523b9ed5faff9f508610e0e655e0c65dc9c72bde08234dd",
+    "optimizedSha256": "8c42c06a9ee30d0f45925f86e6d289727795c3944dd8ec2cea77c17728c2cdd6",
+    "originalBytes": 5794693,
+    "optimizedBytes": 230055
+  },
+  {
+    "image": "Recette48.jpg",
+    "originalSha256": "43cd0f7e9aa6a51c19427ca498e2fe7b094cbcbd4f62e71ad87e75558bb80e6e",
+    "optimizedSha256": "3ec79e79c77366ab77c985dcf0d24a75e86a3764e1e8c4713b6cdf43e37ab6ed",
+    "originalBytes": 3114266,
+    "optimizedBytes": 206354
+  },
+  {
+    "image": "Recette49.jpg",
+    "originalSha256": "d1a46675cb0e9b4c1caf15b373d5aaa1deebe5224d296f06b1cb4021157e2420",
+    "optimizedSha256": "922025eb1fe661de239de7c5aea486ee1857b343db5cdd847367c2aaa6965efa",
+    "originalBytes": 4204928,
+    "optimizedBytes": 202610
+  },
+  {
+    "image": "Recette50.jpg",
+    "originalSha256": "eb3a16c13d09f1bd38d9b17b4cb5e8ab42ce6c56d28446d6cfbfd6ff1ae0132f",
+    "optimizedSha256": "4cc8f9643b100f35c21442764d4029237a8021b22ab8ae9a18da60060c95934e",
+    "originalBytes": 3506031,
+    "optimizedBytes": 256898
+  }
+]
