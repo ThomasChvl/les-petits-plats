@@ -4,9 +4,7 @@ Application OpenClassrooms de consultation et de recherche de recettes : Next.js
 
 ## Lancer le projet
 
-Environnement vérifié : Node.js 22.23.4 et npm 10.9.9.
-
-Utilise cette version de Node pour reproduire les vérifications. Une version trop ancienne d'une autre branche peut provoquer des avertissements de compatibilité des outils de test.
+Prérequis : Node.js 22.23.4 ou version LTS plus récente. Les dernières vérifications du 26 novembre ont utilisé Node.js 24.22.3.
 
 ```bash
 npm ci

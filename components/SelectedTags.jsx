@@ -1,11 +1,11 @@
-import { FILTER_CATEGORIES, normalizeText } from "@/lib/search.mjs";
+import { normalizeText } from "@/lib/search.mjs";
 import { CloseIcon } from "./Icons";
 
-export default function SelectedTags({ tags, onRemove }) {
+export default function SelectedTags({ tags, label, onRemove }) {
   if (tags.length === 0) return null;
 
   return (
-    <ul className="selected-tags" aria-label="Filtres sélectionnés">
+    <ul className="selected-tags" aria-label={`Filtres sélectionnés : ${label}`}>
       {tags.map((tag) => (
         <li
           className="selected-tag"
@@ -15,7 +15,7 @@ export default function SelectedTags({ tags, onRemove }) {
           <button
             type="button"
             className="icon-button"
-            aria-label={`Supprimer le filtre ${FILTER_CATEGORIES.find(({ key }) => key === tag.category).label} : ${tag.value}`}
+            aria-label={`Supprimer le filtre ${label} : ${tag.value}`}
             onClick={() => onRemove(tag)}
           >
             <CloseIcon />

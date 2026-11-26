@@ -147,14 +147,16 @@ for (const path of [
   const page = await readPage(path);
   try {
     checkPageStructure(page.document);
+    assert.equal(page.document.querySelector(".error-code")?.textContent, "404 :(");
+    assert.ok(page.document.querySelector(".not-found img")?.getAttribute("src")?.includes("hero-officiel.jpg"));
     assert.equal(page.response.status, 404, path);
     assert.equal(
       page.document.querySelector("h1")?.textContent,
-      "Cette page reste introuvable",
+      "La page que vous demandez est introuvable.",
       path,
     );
     assert.equal(
-      page.document.querySelector(".home-button")?.getAttribute("href"),
+      page.document.querySelector(".brand")?.getAttribute("href"),
       "/",
     );
     assert.ok(

@@ -71,20 +71,26 @@ export default function RecipeExplorer({ recipes }) {
         <div className="catalogue-toolbar">
           <div className="filters" ref={filtersRef}>
             {FILTER_CATEGORIES.map(({ key, label }) => (
-              <FilterDropdown
-                key={key}
-                category={key}
-                label={label}
-                options={options[key]}
-                isOpen={openFilter === key}
-                onToggle={() =>
-                  setOpenFilter((current) => (current === key ? null : key))
-                }
-                onClose={() =>
-                  setOpenFilter((current) => (current === key ? null : current))
-                }
-                onSelect={addTag}
-              />
+              <div className="filter-group" key={key}>
+                <FilterDropdown
+                  category={key}
+                  label={label}
+                  options={options[key]}
+                  isOpen={openFilter === key}
+                  onToggle={() =>
+                    setOpenFilter((current) => (current === key ? null : key))
+                  }
+                  onClose={() =>
+                    setOpenFilter((current) => (current === key ? null : current))
+                  }
+                  onSelect={addTag}
+                />
+                <SelectedTags
+                  tags={selectedTags.filter((tag) => tag.category === key)}
+                  label={label}
+                  onRemove={removeTag}
+                />
+              </div>
             ))}
           </div>
           <p
@@ -97,7 +103,6 @@ export default function RecipeExplorer({ recipes }) {
             {visibleRecipes.length === 1 ? "recette" : "recettes"}
           </p>
         </div>
-        <SelectedTags tags={selectedTags} onRemove={removeTag} />
         {visibleRecipes.length > 0 ? (
           <div className="recipe-grid">
             {visibleRecipes.map((recipe) => (
