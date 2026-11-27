@@ -604,14 +604,57 @@ input[type="search"]::-webkit-search-cancel-button {
     gap: 30px 24px;
   }
 }
-@media (min-width: 1101px) {
+/* Complément exact de max-width: 1100px, même pour une largeur fractionnaire. */
+@media (width > 1100px) {
+  .detail-body h1 {
+    line-height: 39px;
+    margin-bottom: 32px;
+  }
+  .detail-body .section-label {
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.09em;
+    margin-bottom: 10px;
+  }
+  .detail-body .time-badge {
+    display: block;
+    width: fit-content;
+    font-size: 16px;
+    line-height: 22px;
+    border-radius: 14px;
+  }
+  .detail-body .ingredient-list {
+    grid-template-columns: repeat(3, minmax(0, 150px));
+    gap: 30px;
+    line-height: 22px;
+  }
+  .detail-body .material-list {
+    line-height: 22px;
+  }
+  .detail-body .material-list > li {
+    width: 150px;
+    max-width: 100%;
+  }
+  .detail-body .ingredient-list dd,
+  .detail-body .material-quantity {
+    /* Ligne de 22px, quantité à 20px du nom court : composant de 42px.
+       Un libellé qui passe à la ligne garde sa hauteur naturelle. */
+    margin-top: -2px;
+  }
   /* Le calque Figma de 597px dépasse de 25px la colonne de 572px.
      La marge extérieure de la fiche reste supérieure à ce dépassement. */
   .detail-preparation {
     width: calc(100% + 25px);
   }
+  .detail-preparation .section-label {
+    margin-bottom: 9px;
+  }
   .detail-preparation .preparation-steps {
-    line-height: 1;
+    line-height: 22px;
+  }
+  .detail-preparation .preparation-steps > li,
+  .detail-preparation .preparation-steps ul {
+    margin-block: 0;
   }
 }
 @media (max-width: 1100px) {

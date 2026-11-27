@@ -56,6 +56,17 @@ globalThis.requestAnimationFrame = window.requestAnimationFrame.bind(window);
 globalThis.cancelAnimationFrame = window.cancelAnimationFrame.bind(window);
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 
+// Exerce le vrai diagnostic de Next, sans mesure LCP ni navigateur réel.
+let reportLcp;
+class TestPerformanceObserver {
+  constructor(callback) {
+    reportLcp = (element) => callback({ getEntries: () => [{ element }] });
+  }
+  observe() {}
+}
+window.PerformanceObserver = TestPerformanceObserver;
+globalThis.PerformanceObserver = TestPerformanceObserver;
+
 const require = createRequire(import.meta.url);
 const { createElement, act } = require("react");
 const { createRoot } = require("react-dom/client");
@@ -403,7 +414,7 @@ test("le panneau et la cible restent en place jusqu'au clic de suppression d'un 
   }
 });
 
-test("seule la première photo affichée charge immédiatement, y compris après filtrage", async () => {
+test("le diagnostic LCP de Next suit l'image déjà montée passant de lazy à eager après filtrage", async () => {
   function checkLoading(expectedCount) {
     const images = [...document.querySelectorAll(".recipe-card-photo img")];
     assert.equal(images.length, expectedCount);
@@ -413,11 +424,31 @@ test("seule la première photo affichée charge immédiatement, y compris après
   }
   const initialPhoto = checkLoading(50);
   assert.ok(initialPhoto.getAttribute("src").includes("Recette01.jpg"));
+  const secondPhoto = document.querySelectorAll(".recipe-card-photo img")[1];
+  assert.equal(secondPhoto.getAttribute("loading"), "lazy");
+  assert.equal(typeof reportLcp, "function");
+  // Contrôle positif sur une autre image : le diagnostic détecte bien un LCP lazy.
+  const warningStart = warnings.length;
+  reportLcp(document.querySelectorAll(".recipe-card-photo img")[49]);
+  assert.equal(warnings.length, warningStart + 1);
+  assert.match(warnings.pop(), /Largest Contentful Paint.*loading="eager"/s);
+  reportLcp(initialPhoto);
+  assert.equal(warnings.length, warningStart);
   await fill("#recipe-search", "pou");
   const firstFiltered = checkLoading(13);
   // "pou" trouve aussi des descriptions : le premier résultat est le Poisson.
   assert.equal(firstFiltered.getAttribute("alt"), "Poisson Cru à la tahitienne");
   assert.ok(firstFiltered.getAttribute("src").includes("Recette02.jpg"));
+  assert.equal(firstFiltered, secondPhoto, "Le même élément Image passe de lazy à eager");
+  reportLcp(firstFiltered);
+  assert.equal(warnings.length, warningStart, "Le registre de Next doit aussi connaître eager");
+  await click("Effacer la recherche principale");
+  checkLoading(50);
+  assert.equal(document.querySelectorAll(".recipe-card-photo img")[1], secondPhoto);
+  assert.equal(secondPhoto.getAttribute("loading"), "lazy");
+  reportLcp(secondPhoto);
+  assert.equal(warnings.length, warningStart + 1);
+  assert.match(warnings.pop(), /Recette02\.jpg.*Largest Contentful Paint/s);
   await fill("#recipe-search", "introuvable-xyz");
   assert.equal(document.querySelectorAll(".recipe-card-photo img").length, 0);
   await click("Effacer la recherche principale");
