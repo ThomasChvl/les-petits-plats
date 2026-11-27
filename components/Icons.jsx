@@ -1,4 +1,4 @@
-export function SearchIcon({ size = 24 }) {
+export function SearchIcon({ size = 24, strokeWidth = 1.8 }) {
   return (
     <svg
       width={size}
@@ -12,12 +12,12 @@ export function SearchIcon({ size = 24 }) {
         cy="10.5"
         r="7.25"
         stroke="currentColor"
-        strokeWidth="1.8"
+        strokeWidth={strokeWidth}
       />
       <path
         d="m16 16 5 5"
         stroke="currentColor"
-        strokeWidth="1.8"
+        strokeWidth={strokeWidth}
         strokeLinecap="round"
       />
     </svg>

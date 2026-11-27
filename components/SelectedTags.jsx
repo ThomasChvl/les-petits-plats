@@ -16,7 +16,15 @@ export default function SelectedTags({ tags, label, onRemove }) {
             type="button"
             className="icon-button"
             aria-label={`Supprimer le filtre ${label} : ${tag.value}`}
-            onClick={() => onRemove(tag)}
+            onClick={(event) => {
+              const item = event.currentTarget.closest("li");
+              const nextFocus =
+                item.nextElementSibling?.querySelector("button") ??
+                item.previousElementSibling?.querySelector("button") ??
+                item.closest(".filter-group")?.querySelector(".filter-toggle");
+              onRemove(tag);
+              nextFocus?.focus();
+            }}
           >
             <CloseIcon />
           </button>

@@ -80,6 +80,8 @@ for (let start = 0; start < recipes.length; start += 5) {
         );
         if (recipe.slug === "poulet-coco-reunionnais") {
           assert.equal(page.document.querySelectorAll(".preparation-steps > li").length, 6);
+          assert.equal(page.document.querySelectorAll(".preparation-steps > li > ul").length, 6);
+          assert.equal(page.document.querySelectorAll(".preparation-steps > li > ul > li").length, 14);
           assert.match(page.document.querySelector(".preparation-steps")?.textContent, /Coupez le poulet en morceaux/);
           assert.equal(page.document.querySelectorAll(".material-quantity").length, 2);
         } else {

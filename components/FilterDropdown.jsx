@@ -100,7 +100,8 @@ export default function FilterDropdown({
                     onClick={() => {
                       onSelect({ category, value: option });
                       setQuery("");
-                      inputRef.current?.focus();
+                      onClose();
+                      toggleRef.current?.focus();
                     }}
                   >
                     {option}

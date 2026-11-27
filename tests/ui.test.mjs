@@ -81,7 +81,13 @@ function button(label) {
 }
 
 async function click(label) {
-  await act(async () => button(label).click());
+  await act(async () => {
+    const target = button(label);
+    // HTMLElement.click() seul ne reproduit ni pointerdown ni le déplacement du focus.
+    target.dispatchEvent(new window.Event("pointerdown", { bubbles: true }));
+    target.focus();
+    target.click();
+  });
 }
 
 async function fill(selector, value) {
@@ -138,6 +144,8 @@ test("les filtres React permettent de chercher, cumuler et supprimer les tags", 
   );
   await click("Lait de coco");
   assert.equal(count(), 3);
+  assert.equal(button("Ingrédients").getAttribute("aria-expanded"), "false");
+  assert.equal(document.activeElement, button("Ingrédients"));
   assert.ok(!optionLabels().includes("Lait de coco"));
 
   await click("Appareils");
@@ -184,8 +192,11 @@ test("les filtres React permettent de chercher, cumuler et supprimer les tags", 
 });
 
 test("la recherche principale respecte le seuil, la casse et les accents", async () => {
-  await fill("#recipe-search", "co");
+  await fill("#recipe-search", "po");
   assert.equal(count(), 50);
+  await fill("#recipe-search", "pou");
+  assert.equal(count(), 13);
+  assert.equal(document.querySelector(".recipe-count").textContent, "13 recettes");
   await fill("#recipe-search", "coco");
   assert.ok(count() > 0 && count() < 50);
   await fill("#recipe-search", "CRÈME");
@@ -267,12 +278,71 @@ test("le filtre s'ouvre au clavier et se ferme à la sortie du focus ou au clic 
 test("deux tags de la même catégorie gardent uniquement les recettes qui possèdent les deux", async () => {
   await click("Ingrédients");
   await click("Lait de coco");
+  await click("Ingrédients");
   await click("Poulet");
   assert.equal(count(), 1);
   assert.equal(document.querySelector(".recipe-card h3").textContent, "Poulet coco réunionnais");
+  await click("Ingrédients");
+  assert.ok(optionLabels().includes("Oignon"));
   await click("Supprimer le filtre Ingrédients : Poulet");
   assert.equal(count(), 3);
+  assert.equal(document.activeElement, button("Supprimer le filtre Ingrédients : Lait de coco"));
+  assert.equal(button("Ingrédients").getAttribute("aria-expanded"), "false");
   await click("Supprimer le filtre Ingrédients : Lait de coco");
+  assert.equal(count(), 50);
+  assert.equal(document.activeElement, button("Ingrédients"));
+});
+
+test("chaque menu se ferme après sélection et Échap, avec retour du focus au sélecteur", async () => {
+  for (const { label, category, value } of [
+    { label: "Ingrédients", category: "ingredients", value: "Ail" },
+    { label: "Appareils", category: "appliances", value: "Mixer" },
+    { label: "Ustensiles", category: "ustensils", value: "Casserole" },
+  ]) {
+    await click(label);
+    await click(value);
+    assert.equal(button(label).getAttribute("aria-expanded"), "false");
+    assert.equal(document.activeElement, button(label));
+    await click(label);
+    await act(async () => {
+      const input = document.querySelector(`#search-${category}`);
+      input.focus();
+      input.dispatchEvent(new window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+    });
+    assert.equal(button(label).getAttribute("aria-expanded"), "false");
+    assert.equal(document.activeElement, button(label));
+  }
+  assert.equal(count(), 1);
+  assert.equal(document.querySelector(".recipe-card h3").textContent, "Purée de pois cassés");
+
+  // Changement de menu et retrait d'un tag pendant qu'un autre menu est ouvert.
+  await click("Ingrédients");
+  await click("Appareils");
+  assert.equal(button("Ingrédients").getAttribute("aria-expanded"), "false");
+  assert.equal(button("Appareils").getAttribute("aria-expanded"), "true");
+  await click("Supprimer le filtre Ingrédients : Ail");
+  assert.equal(button("Appareils").getAttribute("aria-expanded"), "false");
+  assert.equal(document.activeElement, button("Ingrédients"));
+  for (const label of ["Supprimer le filtre Appareils : Mixer", "Supprimer le filtre Ustensiles : Casserole"]) {
+    await click(label);
+  }
+  assert.equal(count(), 50);
+  await click("Ingrédients");
+  assert.ok(optionLabels().includes("Ail"));
+  await click("Ingrédients");
+});
+
+test("un libellé long reste sélectionnable et son retrait conserve un focus utile", async () => {
+  const value = "Moule à tartelettes (6)";
+  await click("Ustensiles");
+  await fill("#search-ustensils", "MOULE À TARTELETTES");
+  assert.ok(optionLabels().includes(value));
+  await click(value);
+  assert.ok(count() > 0 && count() < 50);
+  assert.equal(document.querySelector(".selected-tag span").textContent, value);
+  await act(async () => button(`Supprimer le filtre Ustensiles : ${value}`).focus());
+  await click(`Supprimer le filtre Ustensiles : ${value}`);
+  assert.equal(document.activeElement, button("Ustensiles"));
   assert.equal(count(), 50);
 });
 

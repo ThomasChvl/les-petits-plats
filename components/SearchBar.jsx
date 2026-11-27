@@ -50,7 +50,7 @@ export default function SearchBar({ query, onChange }) {
         className="icon-button search-submit"
         aria-label="Rechercher"
       >
-        <SearchIcon size={28} />
+        <SearchIcon size={28} strokeWidth={1.2} />
       </button>
     </form>
   );
