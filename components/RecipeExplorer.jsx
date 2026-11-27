@@ -50,6 +50,8 @@ export default function RecipeExplorer({ recipes }) {
   }
 
   function removeTag(tag) {
+    // Fermer après le clic, pour ne pas déplacer sa cible pendant l'appui.
+    setOpenFilter(null);
     setSelectedTags((current) =>
       current.filter(
         (item) =>
@@ -69,7 +71,26 @@ export default function RecipeExplorer({ recipes }) {
       <main id="contenu" className="catalogue">
         <h2 className="sr-only">Les recettes</h2>
         <div className="catalogue-toolbar">
-          <div className="filters" ref={filtersRef}>
+          <div
+            className="filters"
+            ref={filtersRef}
+            onKeyDown={(event) => {
+              if (event.key === "Escape" && openFilter !== null) {
+                event.preventDefault();
+                const toggle = filtersRef.current.querySelector(
+                  `[aria-controls="filter-${openFilter}"]`,
+                );
+                setOpenFilter(null);
+                toggle?.focus();
+              }
+            }}
+            onBlur={(event) => {
+              // Menus et tags forment une même zone de focus.
+              if (!event.currentTarget.contains(event.relatedTarget)) {
+                setOpenFilter(null);
+              }
+            }}
+          >
             {FILTER_CATEGORIES.map(({ key, label }) => (
               <div className="filter-group" key={key}>
                 <FilterDropdown
@@ -105,8 +126,8 @@ export default function RecipeExplorer({ recipes }) {
         </div>
         {visibleRecipes.length > 0 ? (
           <div className="recipe-grid">
-            {visibleRecipes.map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
+            {visibleRecipes.map((recipe, position) => (
+              <RecipeCard key={recipe.id} recipe={recipe} eager={position === 0} />
             ))}
           </div>
         ) : (

@@ -80,14 +80,28 @@ function button(label) {
   return match;
 }
 
-async function click(label) {
+async function pressPointer(target) {
   await act(async () => {
-    const target = button(label);
-    // HTMLElement.click() seul ne reproduit ni pointerdown ni le déplacement du focus.
-    target.dispatchEvent(new window.Event("pointerdown", { bubbles: true }));
+    target.dispatchEvent(new window.PointerEvent("pointerdown", { bubbles: true, button: 0, pointerType: "mouse" }));
+    target.dispatchEvent(new window.MouseEvent("mousedown", { bubbles: true, button: 0 }));
+    // jsdom ne réalise pas le transfert de focus par défaut de mousedown.
     target.focus();
+  });
+}
+
+async function releasePointer(target) {
+  await act(async () => {
+    target.dispatchEvent(new window.PointerEvent("pointerup", { bubbles: true, button: 0, pointerType: "mouse" }));
+    target.dispatchEvent(new window.MouseEvent("mouseup", { bubbles: true, button: 0 }));
     target.click();
   });
+}
+
+async function click(label) {
+  const target = button(label);
+  // Deux phases pour laisser React traiter le blur AVANT le relâchement et le clic.
+  await pressPointer(target);
+  await releasePointer(target);
 }
 
 async function fill(selector, value) {
@@ -343,6 +357,85 @@ test("un libellé long reste sélectionnable et son retrait conserve un focus ut
   await act(async () => button(`Supprimer le filtre Ustensiles : ${value}`).focus());
   await click(`Supprimer le filtre Ustensiles : ${value}`);
   assert.equal(document.activeElement, button("Ustensiles"));
+  assert.equal(count(), 50);
+});
+
+test("le panneau et la cible restent en place jusqu'au clic de suppression d'un tag", async () => {
+  let scenario = 0;
+  try {
+    for (const { label, category, value, openLabel, openCategory } of [
+      { label: "Ingrédients", category: "ingredients", value: "Lait de coco" },
+      { label: "Appareils", category: "appliances", value: "Blender" },
+      { label: "Ustensiles", category: "ustensils", value: "Verres" },
+      // Un panneau d'une autre catégorie déplace aussi les tags sur mobile.
+      { label: "Ustensiles", category: "ustensils", value: "Verres", openLabel: "Ingrédients", openCategory: "ingredients" },
+    ]) {
+      await act(async () => root.render(createElement(RecipeExplorer, { recipes, key: `pointer-${++scenario}` })));
+      await click(label);
+      await click(value);
+      const filteredCount = count();
+      assert.ok(filteredCount > 0 && filteredCount < 50);
+      await click(openLabel ?? label);
+      await act(async () => document.querySelector(`#search-${openCategory ?? category}`).focus());
+
+      const target = button(`Supprimer le filtre ${label} : ${value}`);
+      const events = [];
+      for (const type of ["pointerdown", "mousedown", "focus", "pointerup", "mouseup", "click"]) {
+        target.addEventListener(type, () => events.push(type));
+      }
+      await pressPointer(target);
+      // Une fermeture ici déplacerait la croix avant pointerup dans un vrai navigateur.
+      assert.equal(button(openLabel ?? label).getAttribute("aria-expanded"), "true");
+      assert.equal(target.isConnected, true);
+      assert.equal(document.activeElement, target);
+      assert.equal(count(), filteredCount);
+      await releasePointer(target);
+      assert.deepEqual(events, ["pointerdown", "mousedown", "focus", "pointerup", "mouseup", "click"]);
+      assert.equal(target.isConnected, false);
+      assert.equal(count(), 50);
+      assert.equal(document.querySelector(".filter-panel"), null);
+      assert.equal(document.activeElement, button(label));
+      await click(label);
+      assert.ok(optionLabels().includes(value));
+    }
+  } finally {
+    await act(async () => root.render(createElement(RecipeExplorer, { recipes, key: "after-pointer" })));
+  }
+});
+
+test("seule la première photo affichée charge immédiatement, y compris après filtrage", async () => {
+  function checkLoading(expectedCount) {
+    const images = [...document.querySelectorAll(".recipe-card-photo img")];
+    assert.equal(images.length, expectedCount);
+    assert.equal(images[0].getAttribute("loading"), "eager");
+    assert.ok(images.slice(1).every((image) => image.getAttribute("loading") === "lazy"));
+    return images[0];
+  }
+  const initialPhoto = checkLoading(50);
+  assert.ok(initialPhoto.getAttribute("src").includes("Recette01.jpg"));
+  await fill("#recipe-search", "pou");
+  const firstFiltered = checkLoading(13);
+  // "pou" trouve aussi des descriptions : le premier résultat est le Poisson.
+  assert.equal(firstFiltered.getAttribute("alt"), "Poisson Cru à la tahitienne");
+  assert.ok(firstFiltered.getAttribute("src").includes("Recette02.jpg"));
+  await fill("#recipe-search", "introuvable-xyz");
+  assert.equal(document.querySelectorAll(".recipe-card-photo img").length, 0);
+  await click("Effacer la recherche principale");
+  assert.ok(checkLoading(50).getAttribute("src").includes("Recette01.jpg"));
+});
+
+test("Échap depuis un tag ferme le menu sans le supprimer et rend le focus au sélecteur", async () => {
+  await click("Ingrédients");
+  await click("Lait de coco");
+  await click("Ingrédients");
+  const remove = button("Supprimer le filtre Ingrédients : Lait de coco");
+  await act(async () => remove.focus());
+  assert.equal(button("Ingrédients").getAttribute("aria-expanded"), "true");
+  await act(async () => remove.dispatchEvent(new window.KeyboardEvent("keydown", { key: "Escape", bubbles: true })));
+  assert.equal(button("Ingrédients").getAttribute("aria-expanded"), "false");
+  assert.equal(document.activeElement, button("Ingrédients"));
+  assert.equal(count(), 3);
+  await click("Supprimer le filtre Ingrédients : Lait de coco");
   assert.equal(count(), 50);
 });
 

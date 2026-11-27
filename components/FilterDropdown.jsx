@@ -26,11 +26,6 @@ export default function FilterDropdown({
   }
 
   function handleKeyDown(event) {
-    if (event.key === "Escape") {
-      event.preventDefault();
-      onClose();
-      toggleRef.current?.focus();
-    }
     if (event.key === "ArrowDown" && event.target === toggleRef.current) {
       event.preventDefault();
       if (!isOpen) handleToggle();
@@ -40,13 +35,7 @@ export default function FilterDropdown({
   }
 
   return (
-    <div
-      className="filter"
-      onKeyDown={handleKeyDown}
-      onBlur={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) onClose();
-      }}
-    >
+    <div className="filter" onKeyDown={handleKeyDown}>
       <button
         ref={toggleRef}
         className="filter-toggle"

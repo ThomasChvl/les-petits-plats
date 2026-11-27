@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import IngredientList from "./IngredientList";
 
-export default function RecipeCard({ recipe }) {
+export default function RecipeCard({ recipe, eager = false }) {
   return (
     <article className="recipe-card">
       <Link
@@ -15,6 +15,7 @@ export default function RecipeCard({ recipe }) {
             src={`/images/${recipe.image}`}
             alt={recipe.name}
             fill
+            loading={eager ? "eager" : "lazy"}
             sizes="(max-width: 639px) calc(100vw - 40px), (max-width: 1023px) 45vw, 30vw"
           />
           <span className="time-badge">{recipe.time} min</span>

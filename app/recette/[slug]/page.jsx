@@ -82,7 +82,10 @@ export default async function RecipePage({ params }) {
                 items={presentation?.appliances ?? [{ name: recipe.appliance }]}
               />
             </section>
-            <section aria-labelledby="preparation-title">
+            <section
+              aria-labelledby="preparation-title"
+              className={presentation?.steps ? "detail-preparation" : undefined}
+            >
               <h2 id="preparation-title" className="section-label">
                 Recette
               </h2>

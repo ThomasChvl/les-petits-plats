@@ -47,6 +47,16 @@ assert.equal(home.document.documentElement.lang, "fr");
 assert.equal(home.document.querySelectorAll(".recipe-card").length, 50);
 assert.equal(home.document.querySelectorAll(".filter-toggle").length, 3);
 assert.ok(home.document.querySelector("#recipe-search"));
+const cardPhotos = [...home.document.querySelectorAll(".recipe-card-photo img")];
+assert.equal(cardPhotos[0].getAttribute("loading"), "eager");
+assert.ok(cardPhotos.slice(1).every((image) => image.getAttribute("loading") === "lazy"));
+const homePreloads = [...home.document.querySelectorAll('link[rel="preload"][as="image"]')]
+  .map((link) => link.getAttribute("imagesrcset") ?? link.getAttribute("href") ?? "");
+assert.ok(homePreloads.some((source) => source.includes("hero-officiel.jpg")));
+// React peut émettre un preload pour une image eager ; aucune autre carte ne doit en recevoir.
+const cardPreloads = homePreloads.filter((source) => /Recette\d+\.jpg/.test(source));
+assert.ok(cardPreloads.length <= 1);
+assert.ok(cardPreloads.every((source) => source.includes("Recette01.jpg")));
 checkPageStructure(home.document);
 for (const [index, card] of [...home.document.querySelectorAll(".recipe-card")].entries()) {
   checkIngredients(card.querySelector(".ingredient-list"), recipes[index].ingredients);
